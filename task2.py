@@ -1,23 +1,28 @@
-# 2. Пользователь вводит время в секундах. Переведите время в часы, минуты и секунды и выведите в формате чч:мм:сс. Используйте форматирование строк.
-time = int(input("Введите время в секундах:"))
-hours = time // 3600
-less_hour = time % 3600
-minutes = less_hour // 60
-seconds = less_hour % 60
+# 2. Для списка реализовать обмен значений соседних элементов, т.е. Значениями обмениваются элементы с индексами 0 и 1, 2 и 3 и т.д. При нечетном количестве элементов последний сохранить на своем месте. Для заполнения списка элементов необходимо использовать функцию input().
 
-if hours > 24:
-    days = hours // 24
-    hours = hours % 24
-else:
-    days = 0
+my_list=[]
 
-if hours <10:
-    hours = "0" + str(hours)
+while True:
+    a = input ("Type + to add an element to the list: ")
+    if a == "+":
+        new_my_list = input ("Add new element to the list: ")
+        my_list.append(new_my_list)
+    else:
+        break
 
-if minutes < 10:
-    minutes = "0" + str(minutes)
+print(f"Your input: {my_list}")
 
-if seconds < 10:
-    seconds = "0" + str(seconds)
+my_list_new=[]
+len_my_list= len(my_list)
 
-print(f"{days} days, time {hours}:{minutes}:{seconds}")
+while len_my_list // 2 > 0:
+    order_change= my_list[1::-1]
+    my_list_new.extend(order_change)
+    my_list.pop(0)
+    my_list.pop(0)
+    len_my_list = len(my_list)
+
+if len_my_list % 2 == 1:
+    my_list_new.extend(my_list)
+
+print(f"Your output {my_list_new}")

@@ -1,14 +1,19 @@
-# 5. Запросите у пользователя значения выручки и издержек фирмы. Определите, с каким финансовым результатом работает фирма (прибыль — выручка больше издержек, или убыток — издержки больше выручки). Выведите соответствующее сообщение. Если фирма отработала с прибылью, вычислите рентабельность выручки (соотношение прибыли к выручке). Далее запросите численность сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника.
-revenue = float((input("Введите значение выручки фирмы: ")))
-costs = float((input("Введите значение издержек фирмы: ")))
-profit = revenue - costs
-if profit < 0:
-    print("Убытки составили ", profit)
-elif profit > 0:
-    print("Прибыль составила", profit)
-    print ("Рентабельность", round(profit/revenue*100,2), "%")
-    empl = int(input("Введите количество сотрудников в организации: "))
-    profit_per_empl = profit / empl
-    print("Прибыль фирмы в расчете на одного сотрудника: ", round(profit_per_empl,2))
-else:
-    print("Breakeven point")
+# 5. Реализовать структуру «Рейтинг», представляющую собой не возрастающий набор натуральных чисел. У пользователя необходимо запрашивать новый элемент рейтинга. Если в рейтинге существуют элементы с одинаковыми значениями, то новый элемент с тем же значением должен разместиться после них.
+
+my_list = [5, 7, 3, 2, 3]
+print('Input: ', my_list)
+
+my_list.sort (reverse=True)
+print('Sorted list: ', my_list)
+
+try:
+    number = int(input('Type positive number: '))
+    if number > 0:
+        my_list.append(number)
+        my_list.sort (reverse=True)
+        print('New sorted list: ', my_list)
+    else:
+        print('Incorrect input. Try one more time')
+except ValueError:
+    print("Type a positive number!")
+
