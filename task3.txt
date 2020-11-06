@@ -1,0 +1,10 @@
+Ivanov 23453.2
+Petrov 20000
+Sidorov 15004
+Plushkin 4500.23
+Sushkin 67009.2
+Korobov 123090.4
+Vasiliev 34876.45
+Myrliko 23456.76
+Zikoa 1090.6
+Pupkin 125897.4
